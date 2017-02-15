@@ -175,7 +175,7 @@ require('formLogic.php');
 
       </fieldset>
       <?php
-      if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+      if ($reqResults) {
         array_push($total, $ChCost, $CfCost,$ChCost,$CfeCost,$CxCost);
         $sTotal=  array_sum($total);
         }
