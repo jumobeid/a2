@@ -1,18 +1,5 @@
 <?php
-require('formLogic.php');?>
-
-<?php
-$sCost =0;
-$sTotal=0;
-
-if(isset($_POST['snak'])) {
-	$snak = $_POST['snak'];
-}
-else {
-	$snak = 'No day was selected';
-}
-
-
+require('formLogic.php');
 ?>
 
 <!-- this is the markup document that should contains a form
@@ -42,7 +29,7 @@ else {
 
     <p>Monday through Friday
       <br> 11am- 3am
-      <br><?=$sTotal?> plus tax</p>
+
 
     <p> Includes sandwich,snack,and drink.</p>
     <form action="index.php" method="POST">
@@ -58,13 +45,13 @@ else {
 
 
             <label>
-              <input type="radio" name="hereOpt" value="here"> here</label><br>
+              <input type="radio" name="hereOpt" value="0"<?php $hCost = (isset($_POST['hereOpt']) ? $_POST['hereOpt'] : "");?>> here</label><br>
 
 
             <label>
-              <input type="radio" name="togoOpt" value="togo"> to go</label><br>
+              <input type="radio" name="hereOpt" value="5"<?php $hCost = (isset($_POST['hereOpt']) ? $_POST['hereOpt'] : "");?>> to go</label><br>
 
-
+             <?php $ChCost= (float)$hCost; ?>
 
       </fieldset>
     <hr>
@@ -75,17 +62,17 @@ else {
             <p>Monday</p>
 
 
-            <input type="radio" name="TomatoMozerella" value="tomatomozerella"> Tomato Mozarella<br>
+            <input type="radio" name="monday" value=10 > Tomato Mozarella<br>
 
-            <input type="radio" name="chickenSalad" value="chickensalad"> Chicken Salad<br>
+            <input type="radio" name="monday" value=5> Chicken Salad<br>
 
 
 
             <br><p>Tuesday</p>
 
-            <input type="radio" name="greekSalad" value="greeksalad"> Greek Salad Wrap<br>
+            <input type="radio" name="tuesday" value=5> Greek Salad Wrap<br>
 
-            <input type="radio" name="dadoWrap" value="dotowrap"> Dado Wrap<br>
+            <input type="radio" name="tuesday" value=11> Dado Wrap<br>
 
 
 
@@ -93,32 +80,32 @@ else {
             <br><p>Wednesday</p>
 
 
-            <input type="radio" name="redPapperhummus" value="redpapperhummus"> Red Papper Hummus<br>
+            <input type="radio" name="wednesday" value=5> Red Papper Hummus<br>
 
-            <input type="radio" name="roastedTurkey" value="roastedturkey"> Roasted Turkey<br>
+            <input type="radio" name="wednesday" value=9> Roasted Turkey<br>
 
 
 
 
             <br><p>Thursday</p>
 
-            <input type="radio" name="carrotGinger" value="carrotginger"> Carrot Ginger Hummus<br>
+            <input type="radio" name="thursday" value=6> Carrot Ginger Hummus<br>
 
-            <input type="radio" name="roastedTurkey" value="roastedturkey"> Roasted Turkey<br>
+            <input type="radio" name="thursday" value=9> Roasted Turkey<br>
 
 
 
 
             <br><p>Friday</p>
 
-            <input type="radio" name="dadoWrap" value="dotorap"> Dado Wrap<br>
+            <input type="radio" name="friday" value=11  <?php $fCost = (isset($_POST['friday']) ? $_POST['friday'] : "");?>> Dado Wrap<br>
 
-            <input type="radio" name="tunaSalad" value="tunasalad"> Tuna Salad<br>
-
+            <input type="radio" name="friday" value=5  <?php $fCost = (isset($_POST['friday']) ? $_POST['friday'] : "");?>> Tuna Salad<br>
+          <?php  $CfCost=(float)$fCost;?>
         <hr>
 
 
-            <input type="checkbox" name="features[]" value="glutenfree"> Gluten Free Bread(75 &cent; extra) <br>
+            <input type="checkbox" name="features[]" value=.75 <?php $feCost = (isset($_POST['friday']) ? $_POST['friday'] : "");?> Gluten Free Bread(75 &cent; extra) <br>
         </ul>
       </fieldset>
         <hr>
@@ -127,24 +114,17 @@ else {
 
 
 
-            <input type="radio" name="snak" value="apple"  <?php if($snak == 'apple') $sCost=3;?>> Apple<br>
+            <input type="radio" name="snak" value="4"  <?php $sCost = (isset($_POST['snak']) ? $_POST['snak'] : "");?>> Apple<br>
 
-            <input type="radio" name="snak" value="banana" <?php if($snak == 'banana') $sCost=4;?>> Banana<br>
+            <input type="radio" name="snak" value="3" <?php $sCost = (isset($_POST['snak']) ? $_POST['snak'] : "");?>> Banana<br>
 
-            <input type="radio" name="snak" value="potatochips"<?php if($snak == 'potatochips') $sCost=5;?>> Potato Chips<br>
+            <input type="radio" name="snak" value="5" <?php $sCost = (isset($_POST['snak']) ? $_POST['snak'] : "");?>> Potato Chips<br>
 
-            <?php
-
-            $total = array(2, 4, 6, 8);
-            $here = 0;
-            $toGo= 5;
-
-            array_push($total, $here, $toGo,$sCost);
-
-            $sTotal=  array_sum($total);
+           <?php
+          $CsCost= (float)$sCost;?>
 
 
-             ?>
+
 
 
       </fieldset>
@@ -191,7 +171,13 @@ else {
 
 
       </fieldset>
-
+      <?php
+      if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        array_push($total, $ChCost, $CfCost,$ChCost);
+        $sTotal=  array_sum($total);
+        }
+        ?>
+      <p class="bg-success"><br>Thank you <?=$userName?> your total payment is <?=$sTotal?> plus tax</p></p>
       <br><button class="btn btn-primary" name="placeOrder">Place Order</button>
 
     </form>
