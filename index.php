@@ -105,8 +105,9 @@ require('formLogic.php');
         <hr>
 
 
-            <input type="checkbox" name="features[]" value=.75 <?php $feCost = (isset($_POST['friday']) ? $_POST['friday'] : "");?> Gluten Free Bread(75 &cent; extra) <br>
-        </ul>
+            <input type="checkbox" name="features[]" value=.75 <?php $feCost = (isset($_POST['features']) ? $_POST['features'] : "");?>>
+            <label>Gluten Free Bread(75 &cent; extra)</label> <br>
+           <?php $CfeCost=(float)$feCost;?>
       </fieldset>
         <hr>
       <fieldset>
@@ -167,17 +168,19 @@ require('formLogic.php');
 
 
 
-            <input type="checkbox" name="extras[]" value="largedrink"> Large drink(75 &cent; extra) <br>
-
+            <input type="checkbox" name="extras[]" value=.75 <?php $xCost = (isset($_POST['extras']) ? $_POST['extras'] : "");?>>
+            <label>Large drink(75 &cent; extra)</label> <br>
+            <?php
+            $CxCost= (float)$xCost;?>
 
       </fieldset>
       <?php
       if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        array_push($total, $ChCost, $CfCost,$ChCost);
+        array_push($total, $ChCost, $CfCost,$ChCost,$CfeCost,$CxCost);
         $sTotal=  array_sum($total);
         }
         ?>
-      <p class="bg-success"><br>Thank you <?=$userName?> your total payment is <?=$sTotal?> plus tax</p></p>
+      <p class="alert alert-info"><br>Thank you <?=$userName?> your total payment is <?=$sTotal?> plus tax</p></p>
       <br><button class="btn btn-primary" name="placeOrder">Place Order</button>
 
     </form>
