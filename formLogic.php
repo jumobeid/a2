@@ -64,10 +64,13 @@ if(isset($_POST['friday'])){
 }
 $CfCost=(float)$fCost;
 
+
 if(isset($_POST['features'])){
 
         $feCost = $_POST['features'];
 }
+$setFeatures =(isset($_POST['features']))? true :false;
+
 if(!empty($feCost)){
 $CfeCost=bcadd($feCost[0],'0',2);}
 
@@ -81,6 +84,7 @@ if(isset($_POST['extras'])){
 
         $xCost = $_POST['extras'];
 }
+$setExtras =(isset($_POST['extras']))? true :false;
 //dump($xCost[0]);
 //initilize string
 if(!empty($xCost)){

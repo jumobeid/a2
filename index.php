@@ -39,11 +39,11 @@ require('formLogic.php');
 
 
             <label>
-              <input type="radio" name="hereOpt" value="0"> here</label><br>
+              <input type="radio" name="hereOpt" value="0" <?php if(isset($_POST['hereOpt'])&& $_POST['hereOpt']=="0") echo 'CHECKED'?>> here</label><br>
 
 
             <label>
-              <input type="radio" name="hereOpt" value="5"> to go</label><br>
+              <input type="radio" name="hereOpt" value="5" <?php if(isset($_POST['hereOpt'])&& $_POST['hereOpt']=="5") echo 'CHECKED'?>> to go</label><br>
 
 
 
@@ -56,17 +56,17 @@ require('formLogic.php');
             <p>Monday</p>
 
 
-            <input type="radio" name="monday" value=10 > Tomato Mozarella<br>
+            <input type="radio" name="monday" value=10 <?php if(isset($_POST['monday'])&& $_POST['monday']=="10") echo 'CHECKED'?>> Tomato Mozarella<br>
 
-            <input type="radio" name="monday" value=5 > Chicken Salad<br>
+            <input type="radio" name="monday" value=5 <?php if(isset($_POST['monday'])&& $_POST['monday']=="5") echo 'CHECKED'?>> Chicken Salad<br>
 
 
 
             <br><p>Tuesday</p>
 
-            <input type="radio" name="tuesday" value=5> Greek Salad Wrap<br>
+            <input type="radio" name="tuesday" value=5 <?php if(isset($_POST['tuesday'])&& $_POST['tuesday']=="5") echo 'CHECKED'?>> Greek Salad Wrap<br>
 
-            <input type="radio" name="tuesday" value=11> Dado Wrap<br>
+            <input type="radio" name="tuesday" value=11<?php if(isset($_POST['tuesday'])&& $_POST['tuesday']=="11") echo 'CHECKED'?>> Dado Wrap<br>
 
 
 
@@ -74,32 +74,32 @@ require('formLogic.php');
             <br><p>Wednesday</p>
 
 
-            <input type="radio" name="wednesday" value=5> Red Papper Hummus<br>
+            <input type="radio" name="wednesday" value=5 <?php if(isset($_POST['wednesday'])&& $_POST['wednesday']=="5") echo 'CHECKED'?>> Red Papper Hummus<br>
 
-            <input type="radio" name="wednesday" value=9> Roasted Turkey<br>
+            <input type="radio" name="wednesday" value=9 <?php if(isset($_POST['wednesday'])&& $_POST['wednesday']=="9") echo 'CHECKED'?>> Roasted Turkey<br>
 
 
 
 
             <br><p>Thursday</p>
 
-            <input type="radio" name="thursday" value=6> Carrot Ginger Hummus<br>
+            <input type="radio" name="thursday" value=6 <?php if(isset($_POST['thursday'])&& $_POST['thursday']=="6") echo 'CHECKED'?>> Carrot Ginger Hummus<br>
 
-            <input type="radio" name="thursday" value=9> Roasted Turkey<br>
+            <input type="radio" name="thursday" value=9 <?php if(isset($_POST['thursday'])&& $_POST['thursday']=="9") echo 'CHECKED'?>> Roasted Turkey<br>
 
 
 
 
             <br><p>Friday</p>
 
-            <input type="radio" name="friday" value=11> Dado Wrap<br>
+            <input type="radio" name="friday" value=11 <?php if(isset($_POST['friday'])&& $_POST['friday']=="11") echo 'CHECKED'?>> Dado Wrap<br>
 
-            <input type="radio" name="friday" value=5> Tuna Salad<br>
+            <input type="radio" name="friday" value=5  <?php if(isset($_POST['friday'])&& $_POST['friday']=="5") echo 'CHECKED'?>> Tuna Salad<br>
 
         <hr>
 
 
-            <input type="checkbox" name="features[]" value="0.75"<?php if($feCost =='0.75') echo 'CHECKED'?>>
+            <input type="checkbox" name="features[]" value="0.75" <?php if($setFeatures) echo 'CHECKED'?>>
             <label>Gluten Free Bread(75 &cent; extra)</label> <br>
 
       </fieldset>
@@ -109,11 +109,11 @@ require('formLogic.php');
 
 
 
-            <input type="radio" name="snak" value="4"> Apple<br>
+            <input type="radio" name="snak" value="4" <?php if(isset($_POST['snak'])&& $_POST['snak']=="4") echo 'CHECKED'?>> Apple<br>
 
-            <input type="radio" name="snak" value="3"> Banana<br>
+            <input type="radio" name="snak" value="3" <?php if(isset($_POST['snak'])&& $_POST['snak']=="3") echo 'CHECKED'?>> Banana<br>
 
-            <input type="radio" name="snak" value="5"> Potato Chips<br>
+            <input type="radio" name="snak" value="5" <?php if(isset($_POST['snak'])&& $_POST['snak']=="5") echo 'CHECKED'?>> Potato Chips<br>
 
 
 
@@ -129,22 +129,22 @@ require('formLogic.php');
             <select name='drink' id="drink">
               <option value='0'>Choose one...</option>
               <optgroup label="Black Tea">
-                <option value="5" <?php if($dCost == '5') echo 'SELECTED'?>>Hot Black Tea-Keemun</option>
-                <option value="5" <?php if($dCost == '5') echo 'SELECTED'?>>Hot Black Tea-Decaf Keemun</option>
-                <option value="4" <?php if($dCost == '4') echo 'SELECTED'?>>Iced Black Tea-Keemun</option>
-                <option value="4" <?php if($dCost == '4') echo 'SELECTED'?>>Iced Black Tea-DecafKeemun</option>
+                <option value="5" <?php if(isset($_POST['drink'])&& $_POST['drink']=="5") echo 'SELECTED'?>>Hot Black Tea-Keemun</option>
+                <option value="5" <?php if(isset($_POST['drink'])&& $_POST['drink']=="5") echo 'SELECTED'?>>Hot Black Tea-Decaf Keemun</option>
+                <option value="4" <?php if(isset($_POST['drink'])&& $_POST['drink']=="4") echo 'SELECTED'?>>Iced Black Tea-Keemun</option>
+                <option value="4" <?php if(isset($_POST['drink'])&& $_POST['drink']=="4") echo 'SELECTED'?>>Iced Black Tea-DecafKeemun</option>
               </optgroup>
               <optgroup label="Green Tea">
-                <option value="6"<?php if($dCost == '6') echo 'SELECTED'?>>Hot Green Tea-Sancha</option>
-                <option value="6"<?php if($dCost == '6') echo 'SELECTED'?>>Hot Green Tea-Decaf</option>
-                <option value="3"<?php if($dCost == '3') echo 'SELECTED'?>>Iced Green Tea-Sancha</option>
-                <option value="3"<?php if($dCost == '3') echo 'SELECTED'?>>Iced Green Tea-Decaf</option>
+                <option value="6"<?php if(isset($_POST['drink'])&& $_POST['drink']=="6") echo 'SELECTED'?>>Hot Green Tea-Sancha</option>
+                <option value="6"<?php if(isset($_POST['drink'])&& $_POST['drink']=="6") echo 'SELECTED'?>>Hot Green Tea-Decaf</option>
+                <option value="3"<?php if(isset($_POST['drink'])&& $_POST['drink']=="3") echo 'SELECTED'?>>Iced Green Tea-Sancha</option>
+                <option value="3"<?php if(isset($_POST['drink'])&& $_POST['drink']=="3") echo 'SELECTED'?>>Iced Green Tea-Decaf</option>
               </optgroup>
               <optgroup label="Coffee">
-                <option value="7"<?php if($dCost == '7') echo 'SELECTED'?>>Hot Coffee</option>
-                <option value="7"<?php if($dCost == '7') echo 'SELECTED'?>>Hot Decaf Coffee</option>
-                <option value="5"<?php if($dCost == '5') echo 'SELECTED'?>>Iced Coffee</option>
-                <option value="5"<?php if($dCost == '5') echo 'SELECTED'?>>Iced Decaf Coffee</option>
+                <option value="7"<?php if(isset($_POST['drink'])&& $_POST['drink']=="7") echo 'SELECTED'?>>Hot Coffee</option>
+                <option value="7"<?php if(isset($_POST['drink'])&& $_POST['drink']=="7") echo 'SELECTED'?>>Hot Decaf Coffee</option>
+                <option value="5"<?php if(isset($_POST['drink'])&& $_POST['drink']=="5") echo 'SELECTED'?>>Iced Coffee</option>
+                <option value="5"<?php if(isset($_POST['drink'])&& $_POST['drink']=="5") echo 'SELECTED'?>>Iced Decaf Coffee</option>
               </optgroup>
             </select>
 
@@ -152,7 +152,7 @@ require('formLogic.php');
 
 
 
-            <input type="checkbox" name="extras[]" value="0.75"<?php if($xCost == '7.5') echo 'checked="checked"'?>>
+            <input type="checkbox" name="extras[]" value="0.75"<?php if($setExtras) echo 'CHECKED'?>>
             <label>Large drink(75 &cent; extra)</label> <br>
 
 
