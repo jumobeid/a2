@@ -2,12 +2,6 @@
 require('formLogic.php');
 ?>
 
-<!-- this is the markup document that should contains a form
-     that represents the choices available on the
-     Dado Tea Lunch Special paper form -->
-<!--http://character-code.com/currency-html-codes.php-->
-<!--w3schools.com-->
-<!-- remember to use action="http://cscis12.dce.harvard.edu/echo" for the form element -->
 <!DOCTYPE html >
 <html>
 
@@ -45,21 +39,13 @@ require('formLogic.php');
 
 
             <label>
-              <input type="radio" name="hereOpt" value="0"<?php if(isset($_POST['hereOpt'])){
-                                                            echo "CHECKED";
-                                                            $hCost = $_POST['hereOpt'];
-
-                                                            }?>> here</label><br>
+              <input type="radio" name="hereOpt" value="0"> here</label><br>
 
 
             <label>
-              <input type="radio" name="hereOpt" value="5"<?php if(isset($_POST['hereOpt'])){
-                                                            echo "CHECKED";
-                                                            $hCost = $_POST['hereOpt'];
+              <input type="radio" name="hereOpt" value="5"> to go</label><br>
 
-                                                            }?>> to go</label><br>
 
-             <?php $ChCost= (float)$hCost; ?>
 
       </fieldset>
     <hr>
@@ -70,98 +56,52 @@ require('formLogic.php');
             <p>Monday</p>
 
 
-            <input type="radio" name="monday" value=10 <?php
-                                                        if(isset($_POST['monday'])){
-                                                        echo "CHECKED";
-                                                        $mCost = $_POST['monday'];
+            <input type="radio" name="monday" value=10 > Tomato Mozarella<br>
 
-                                                        }?>> Tomato Mozarella<br>
+            <input type="radio" name="monday" value=5 > Chicken Salad<br>
 
-            <input type="radio" name="monday" value=5 <?php if(isset($_POST['monday'])){
-                                                        echo "CHECKED";
-                                                        $mCost = $_POST['monday'];
-
-                                                        }?>> Chicken Salad<br>
-                                                        <?php
-            $CmCost= (float)$mCost;?>
 
 
             <br><p>Tuesday</p>
 
-            <input type="radio" name="tuesday" value=5<?php if(isset($_POST['tuesday'])){
-                                                        echo "CHECKED";
-                                                        $mCost = $_POST['tuesday'];
+            <input type="radio" name="tuesday" value=5> Greek Salad Wrap<br>
 
-                                                        }?>> Greek Salad Wrap<br>
+            <input type="radio" name="tuesday" value=11> Dado Wrap<br>
 
-            <input type="radio" name="tuesday" value=11<?php  if(isset($_POST['tuesday'])){
-                                                        echo "CHECKED";
-                                                        $tCost = $_POST['tuesday'];
-
-                                                        }?>> Dado Wrap<br>
-            <?php
-            $CtCost= (float)$tCost;?>
 
 
 
             <br><p>Wednesday</p>
 
 
-            <input type="radio" name="wednesday" value=5<?php if(isset($_POST['wednesday'])){
-                                                        echo "CHECKED";
-                                                        $wCost = $_POST['wednesday'];
+            <input type="radio" name="wednesday" value=5> Red Papper Hummus<br>
 
-                                                        }?>> Red Papper Hummus<br>
+            <input type="radio" name="wednesday" value=9> Roasted Turkey<br>
 
-            <input type="radio" name="wednesday" value=9<?php if(isset($_POST['wednesday'])){
-                                                        echo "CHECKED";
-                                                        $wCost = $_POST['wednesday'];
-
-                                                        }?>> Roasted Turkey<br>
-            <?php
-            $CwCost= (float)$wCost;?>
 
 
 
             <br><p>Thursday</p>
 
-            <input type="radio" name="thursday" value=6<?php if(isset($_POST['thursday'])){
-                                                        echo "CHECKED";
-                                                        $thCost = $_POST['thursday'];
+            <input type="radio" name="thursday" value=6> Carrot Ginger Hummus<br>
 
-                                                        }?>> Carrot Ginger Hummus<br>
+            <input type="radio" name="thursday" value=9> Roasted Turkey<br>
 
-            <input type="radio" name="thursday" value=9<?php if(isset($_POST['thursday'])){
-                                                        echo "CHECKED";
-                                                        $thCost = $_POST['thursday'];
-
-                                                        }?>> Roasted Turkey<br>
-            <?php
-            $CthCost= (float)$thCost;?>
 
 
 
             <br><p>Friday</p>
 
-            <input type="radio" name="friday" value=11  <?php if(isset($_POST['friday'])){
-                                                        echo "CHECKED";
-                                                        $fCost = $_POST['friday'];
+            <input type="radio" name="friday" value=11> Dado Wrap<br>
 
-                                                        }?>> Dado Wrap<br>
+            <input type="radio" name="friday" value=5> Tuna Salad<br>
 
-            <input type="radio" name="friday" value=5  <?php if(isset($_POST['friday'])){
-                                                        echo "CHECKED";
-                                                        $fCost = $_POST['friday'];
-
-                                                        }?>> Tuna Salad<br>
-          <?php  $CfCost=(float)$fCost;?>
         <hr>
 
 
-            <input type="checkbox" name="features[]" value=0.75 <?php $feCost = (isset($_POST['features']) ? $_POST['features'] : "");?><?php if(isset($_POST['features'])) echo "CHECKED";?>>
+            <input type="checkbox" name="features[]" value="0.75"<?php if($feCost =='0.75') echo 'CHECKED'?>>
             <label>Gluten Free Bread(75 &cent; extra)</label> <br>
-           <?php  if(!empty($feCost)){
-           $CfeCost=bcadd($feCost[0],'0',2);}?>
+
       </fieldset>
         <hr>
       <fieldset>
@@ -169,16 +109,11 @@ require('formLogic.php');
 
 
 
-            <input type="radio" name="snak" value="4"  <?php $sCost = (isset($_POST['snak']) ? $_POST['snak'] : "");if(isset($_POST['snak'])) echo "CHECKED";?>> Apple<br>
+            <input type="radio" name="snak" value="4"> Apple<br>
 
-            <input type="radio" name="snak" value="3" <?php $sCost = (isset($_POST['snak']) ? $_POST['snak'] : "");if(isset($_POST['snak'])) echo "CHECKED";?>> Banana<br>
+            <input type="radio" name="snak" value="3"> Banana<br>
 
-            <input type="radio" name="snak" value="5" <?php $sCost = (isset($_POST['snak']) ? $_POST['snak'] : "");if(isset($_POST['snak'])) echo "CHECKED";?>> Potato Chips<br>
-
-           <?php
-           $CsCost= (float)$sCost;?>
-
-
+            <input type="radio" name="snak" value="5"> Potato Chips<br>
 
 
 
@@ -190,28 +125,26 @@ require('formLogic.php');
 
 
 
-            <p>Drink</p>
-
-
-
-            <select name='drink'>
+            <label for='drink'>Select which drink do you prefere</label>
+            <select name='drink' id="drink">
+              <option value='0'>Choose one...</option>
               <optgroup label="Black Tea">
-                <option value="5">Hot Black Tea-Keemun</option>
-                <option value="5">Hot Black Tea-Decaf Keemun</option>
-                <option value="4">Iced Black Tea-Keemun</option>
-                <option value="4">Iced Black Tea-DecafKeemun</option>
+                <option value="5" <?php if($dCost == '5') echo 'SELECTED'?>>Hot Black Tea-Keemun</option>
+                <option value="5" <?php if($dCost == '5') echo 'SELECTED'?>>Hot Black Tea-Decaf Keemun</option>
+                <option value="4" <?php if($dCost == '4') echo 'SELECTED'?>>Iced Black Tea-Keemun</option>
+                <option value="4" <?php if($dCost == '4') echo 'SELECTED'?>>Iced Black Tea-DecafKeemun</option>
               </optgroup>
               <optgroup label="Green Tea">
-                <option value="6">Hot Green Tea-Sancha</option>
-                <option value="6">Hot Green Tea-Decaf</option>
-                <option value="3">Iced Green Tea-Sancha</option>
-                <option value="3">Iced Green Tea-Decaf</option>
+                <option value="6"<?php if($dCost == '6') echo 'SELECTED'?>>Hot Green Tea-Sancha</option>
+                <option value="6"<?php if($dCost == '6') echo 'SELECTED'?>>Hot Green Tea-Decaf</option>
+                <option value="3"<?php if($dCost == '3') echo 'SELECTED'?>>Iced Green Tea-Sancha</option>
+                <option value="3"<?php if($dCost == '3') echo 'SELECTED'?>>Iced Green Tea-Decaf</option>
               </optgroup>
               <optgroup label="Coffee">
-                <option value="7">Hot Coffee</option>
-                <option value="7">Hot Decaf Coffee</option>
-                <option value="5">Iced Coffee</option>
-                <option value="5">Iced Decaf Coffee</option>
+                <option value="7"<?php if($dCost == '7') echo 'SELECTED'?>>Hot Coffee</option>
+                <option value="7"<?php if($dCost == '7') echo 'SELECTED'?>>Hot Decaf Coffee</option>
+                <option value="5"<?php if($dCost == '5') echo 'SELECTED'?>>Iced Coffee</option>
+                <option value="5"<?php if($dCost == '5') echo 'SELECTED'?>>Iced Decaf Coffee</option>
               </optgroup>
             </select>
 
@@ -219,21 +152,12 @@ require('formLogic.php');
 
 
 
-            <input type="checkbox" name="extras[]" value="0.75" <?php $xCost = (isset($_POST['extras']) ? $_POST['extras'] : "");?><?php if(isset($_POST['extras'])) echo "CHECKED";?>>
+            <input type="checkbox" name="extras[]" value="0.75"<?php if($xCost == '7.5') echo 'checked="checked"'?>>
             <label>Large drink(75 &cent; extra)</label> <br>
-            <?php
-            //dump($xCost[0]);
-            if(!empty($feCost)){
-            $CxCost= bcadd($xCost[0],'0',2);}
-            //echo $CxCost;?>
+
 
       </fieldset>
-      <?php
-      if ($reqResults) {
-        array_push($total, $ChCost, $CmCost, $CtCost, $CwCost,$CthCost,$CfCost,$CfeCost,$CsCost,$CxCost,$dCost);
-        $sTotal=  array_sum($total);
-        }
-        ?>
+
       <p class="alert alert-info"><br>Thank you <?=$userName?> your total payment is <?=$sTotal?> plus tax</p></p>
       <br><button class="btn btn-primary" name="placeOrder">Place Order</button>
 
