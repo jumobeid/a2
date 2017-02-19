@@ -22,8 +22,16 @@ $sTotal=0;
 $dCost=0;
 $total = array();
 $today = date("l");
+$serve=false;
 //$today="Tuesday";
 
+//check if we can server you today
+$daysWeek = array("Monday", "Tuesday", "Wednesday", "Thursday","Friday");
+if (in_array($today, $daysWeek)) {
+    $serve= true;
+}
+
+//check if we initiated a request
 $reqResults=$_SERVER['REQUEST_METHOD'] == 'POST';
 
 
