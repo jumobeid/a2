@@ -21,7 +21,8 @@ $CxCost=(float)0.00;
 $sTotal=0;
 $dCost=0;
 $total = array();
-
+$today = date("l");
+//$today="Tuesday";
 
 $reqResults=$_SERVER['REQUEST_METHOD'] == 'POST';
 

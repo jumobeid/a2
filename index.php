@@ -51,50 +51,54 @@ require('formLogic.php');
     <hr>
       <fieldset>
         <legend>Sandwiches</legend>
+            <?php
+             switch ($today) {
+              case "Monday":?>
+
+              <p>Monday</p>
+
+                  <input type="radio" name="monday" value=10 <?php if(isset($_POST['monday'])&& $_POST['monday']=="10") echo 'CHECKED'?>> Tomato Mozarella<br>
+
+                  <input type="radio" name="monday" value=5 <?php if(isset($_POST['monday'])&& $_POST['monday']=="5") echo 'CHECKED'?>> Chicken Salad<br>
+                <?php  break;
+
+              case "Tuesday":?>
+              <br><p>Tuesday</p>
+
+                  <input type="radio" name="tuesday" value=5 <?php if(isset($_POST['tuesday'])&& $_POST['tuesday']=="5") echo 'CHECKED'?>> Greek Salad Wrap<br>
+
+                  <input type="radio" name="tuesday" value=11<?php if(isset($_POST['tuesday'])&& $_POST['tuesday']=="11") echo 'CHECKED'?>> Dado Wrap<br>
+              <?php  break;
+
+              case "Wednesday":?>
+              <br><p>Wednesday</p>
 
 
-            <p>Monday</p>
+                  <input type="radio" name="wednesday" value=5 <?php if(isset($_POST['wednesday'])&& $_POST['wednesday']=="5") echo 'CHECKED'?>> Red Papper Hummus<br>
 
+                  <input type="radio" name="wednesday" value=9 <?php if(isset($_POST['wednesday'])&& $_POST['wednesday']=="9") echo 'CHECKED'?>> Roasted Turkey<br>
+              <?php    break;
+              case "Thursday":?>
+              <br><p>Thursday</p>
 
-            <input type="radio" name="monday" value=10 <?php if(isset($_POST['monday'])&& $_POST['monday']=="10") echo 'CHECKED'?>> Tomato Mozarella<br>
+              <input type="radio" name="thursday" value=6 <?php if(isset($_POST['thursday'])&& $_POST['thursday']=="6") echo 'CHECKED'?>> Carrot Ginger Hummus<br>
 
-            <input type="radio" name="monday" value=5 <?php if(isset($_POST['monday'])&& $_POST['monday']=="5") echo 'CHECKED'?>> Chicken Salad<br>
+              <input type="radio" name="thursday" value=9 <?php if(isset($_POST['thursday'])&& $_POST['thursday']=="9") echo 'CHECKED'?>> Roasted Turkey<br>
 
+             <?php  break;
+              case "Friday":?>
+              <br><p>Friday</p>
 
+              <input type="radio" name="friday" value=11 <?php if(isset($_POST['friday'])&& $_POST['friday']=="11") echo 'CHECKED'?>> Dado Wrap<br>
 
-            <br><p>Tuesday</p>
+              <input type="radio" name="friday" value=5  <?php if(isset($_POST['friday'])&& $_POST['friday']=="5") echo 'CHECKED'?>> Tuna Salad<br>
 
-            <input type="radio" name="tuesday" value=5 <?php if(isset($_POST['tuesday'])&& $_POST['tuesday']=="5") echo 'CHECKED'?>> Greek Salad Wrap<br>
+              <?php break;
+              default:
+                  echo "We are happy to serve you Monday to Friday!";
+              }
+              ?>
 
-            <input type="radio" name="tuesday" value=11<?php if(isset($_POST['tuesday'])&& $_POST['tuesday']=="11") echo 'CHECKED'?>> Dado Wrap<br>
-
-
-
-
-            <br><p>Wednesday</p>
-
-
-            <input type="radio" name="wednesday" value=5 <?php if(isset($_POST['wednesday'])&& $_POST['wednesday']=="5") echo 'CHECKED'?>> Red Papper Hummus<br>
-
-            <input type="radio" name="wednesday" value=9 <?php if(isset($_POST['wednesday'])&& $_POST['wednesday']=="9") echo 'CHECKED'?>> Roasted Turkey<br>
-
-
-
-
-            <br><p>Thursday</p>
-
-            <input type="radio" name="thursday" value=6 <?php if(isset($_POST['thursday'])&& $_POST['thursday']=="6") echo 'CHECKED'?>> Carrot Ginger Hummus<br>
-
-            <input type="radio" name="thursday" value=9 <?php if(isset($_POST['thursday'])&& $_POST['thursday']=="9") echo 'CHECKED'?>> Roasted Turkey<br>
-
-
-
-
-            <br><p>Friday</p>
-
-            <input type="radio" name="friday" value=11 <?php if(isset($_POST['friday'])&& $_POST['friday']=="11") echo 'CHECKED'?>> Dado Wrap<br>
-
-            <input type="radio" name="friday" value=5  <?php if(isset($_POST['friday'])&& $_POST['friday']=="5") echo 'CHECKED'?>> Tuna Salad<br>
 
         <hr>
 
