@@ -49,7 +49,7 @@ require('formLogic.php');
 
 
             <label>
-              <input type="radio" name="hereOpt" value="0" <?php if(isset($_POST['hereOpt'])&& $_POST['hereOpt']=="0") echo 'CHECKED'?>> here<small>Free</small></label><br>
+              <input type="radio" name="hereOpt" value="0" <?php if(isset($_POST['hereOpt'])&& $_POST['hereOpt']=="0") echo 'CHECKED'?>> here<small> Free</small></label><br>
 
 
             <label>
