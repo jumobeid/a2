@@ -1,29 +1,40 @@
+
+
 <?php
 
 namespace DWA;
 
 
-class Price
-{
-    protected $_items = array();
-    public function __set($key, $value)
-    {
-        $this->_items[$key] = $value;
-    }
-    public function __get($key)
-    {
-        if (isset($this->_items[$key])) {
-            return $this->_items[$key];
-        } else {
-            return null;
-        }
-    }
-    public function __isset($key)
-    {
-        if (isset($this->_items[$key])) {
-            return (false === empty($this->_items[$key]));
-        } else {
-            return null;
-        }
-    }
-}#eoc
+  class Price {
+      public $items;
+      public $cost;
+
+      public function __construct() {
+          $this->items = array();
+
+
+      }
+
+
+      public function addValue($value){
+          ($this->cost=$value);
+
+
+       }
+
+     public function pushValue($items,$cost){
+
+          //echo $this->cost;
+         return array_push($this->items,$this->cost);
+      }
+
+  }#eoc
+
+
+
+$price = new Price();
+dump ($price->items);
+$price->addValue("5");
+dump($price->cost);
+$price->pushValue($items,$cost);
+dump ($price->items);
