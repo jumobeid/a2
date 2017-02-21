@@ -1,5 +1,3 @@
-
-
 <?php
 
 namespace DWA;
@@ -32,9 +30,9 @@ namespace DWA;
 
 
 
-$price = new Price();
-dump ($price->items);
-$price->addValue("5");
-dump($price->cost);
-$price->pushValue($items,$cost);
-dump ($price->items);
+
+//dump ($price->items);
+//$price->addValue("5");
+//dump($price->cost);
+//$price->pushValue($items,$cost);
+//dump ($price->items);
