@@ -173,7 +173,7 @@ require('formLogic.php');
       </fieldset>
 
       <p class="alert alert-info"><br>Thank you <?=$userName?> your total payment is <?=$sTotal?> plus tax</p></p><br>
-      <?php if(isset($errors)): ?>
+      <?php if(!empty($errors)):?>
          <div class='alert alert-danger'>
              <ul>
                  <?php foreach($errors as $error): ?>
@@ -181,13 +181,14 @@ require('formLogic.php');
                  <?php endforeach; ?>
              </ul>
          </div>
-     <?php endif; ?>
+     <?php endif ?>
       <br><button class="btn btn-primary" name="placeOrder">Place Order</button>
        <?php }else{
         }echo "We are happy to serve you Monday to Friday!";?>
 
 
     </form>
+
 
     <div class="row">
     </div>
