@@ -32,12 +32,15 @@ button {
     cursor: pointer;
     float: right;
 }
+/*small{
+  color:orange !important;
+}
 h1{
     font-family: sans-serif;
     font-size: 25px;
     color: blue !important;
 
-}
+}*/
 legend{
     font-family: sans-serif;
     font-size: 20px;
