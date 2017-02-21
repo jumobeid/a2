@@ -1,11 +1,12 @@
 <?php
-require('tools.php');
+require('Tools.php');
 require('Form.php');
 require('Price.php');
 
 
 $form = new DWA\Form($_POST);
 $price = new DWA\Price();
+$tools = new DWA\Tools();
 
 $hCost=0;
 $mCost=0;
@@ -33,8 +34,8 @@ if (in_array($today, $daysWeek)) {
     $serve= true;
 }
 
-
-$userName=(isset($_POST['userName'])) ? $_POST['userName']:'';
+$userName=$form->get('userName');
+$userName=$form->sanitize($userName);
 //if the menu appreared
 if ($serve){
             if(isset($_POST['hereOpt'])){

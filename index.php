@@ -43,7 +43,7 @@ require('formLogic.php');
 
 
             <label for="form-name">Name:</label>
-            <input type="text" name="userName" id="form-name" value="<?=sanitize($userName)?>" required><br>
+            <input type="text" name="userName" id="form-name" value="<?php $userName ?>" required><br>
 
 
 
