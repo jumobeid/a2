@@ -10,18 +10,9 @@ require('formLogic.php');
     <title>Dado Tea Lunch Special</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/form.css">
-    <style>
-    small{
-      color:#781010 !important;
-    }
-    #price {
-      color:#781010 !important;
-    }
-    h1{
-       color:#781010 !important;
-    }
-    </style>
+    <link rel="stylesheet" type="text/css" href="form.css">
+
+
 
   </head>
 
