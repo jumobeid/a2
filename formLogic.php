@@ -41,8 +41,8 @@ if ($serve){
             if(isset($_POST['hereOpt'])){
 
                     $hCost=$form->get('hereOpt');
-                    $price->addValue($mCost);
-                    $price->pushValue($price->items,$mCost);
+                    $price->addValue($hCost);
+                    $price->pushValue($price->items,$hCost);
              }
 
 
