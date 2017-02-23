@@ -30,7 +30,7 @@ require('formLogic.php');
       <div class="col-md-4"></div>
       <div class="col-md-4">
     <h1 style="color:#781010">Dado Tea Lunch Special</h1>
-    <?php if($serve){ ?>
+    <?php if($serve): ?>
     <p>Monday through Friday
       <br> 11am- 3am
 
@@ -186,9 +186,9 @@ require('formLogic.php');
       <?php endif ?>
       <br><button class="btn btn-primary" name="placeOrder">Place Order</button>
 
-    <?php }else{
-        echo "We are happy to serve you Monday to Friday!";}?>
-
+    <?php else:?>
+      <div> "We are happy to serve you Monday to Friday!"</div>
+    <?php endif ?>
 
     </form>
 
