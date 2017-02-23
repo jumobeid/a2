@@ -40,7 +40,7 @@ require('formLogic.php');
 
 
             <label>
-              <input type="radio" name="hereOpt" value="1" <?php if($hCost=="1") echo 'CHECKED'?>> here<small> Free</small></label><br>
+              <input type="radio" name="hereOpt" value="3" <?php if($hCost=="3") echo 'CHECKED'?>> here<small> 3&#36;</small></label><br>
 
 
             <label>
@@ -163,10 +163,10 @@ require('formLogic.php');
 
       </fieldset>
 
-      <?php if (!empty($userName)&&(empty($errors))):?>
+      <?php if (!empty($userName)&&($form->hasErrors==false)):?>
         <p class="alert alert-info"><br>Thank you <?=$userName?> your total payment is <?=$sTotal?> plus tax</p></p><br>
      <?php endif ?>
-      <?php if(!empty($errors)):?>
+      <?php if($form->hasErrors):?>
          <div class='alert alert-danger'>
              <ul>
                  <?php foreach($errors as $error): ?>

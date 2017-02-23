@@ -26,7 +26,7 @@ $aCxCost=0;
 $today = date("l");
 $serve=false;
 //for testing
-//$today="Friday";
+//$today="Sunday";
 
 //check if we can server you today
 $daysWeek = array("Monday", "Tuesday", "Wednesday", "Thursday","Friday");
@@ -41,6 +41,8 @@ if ($serve){
             if(isset($_POST['hereOpt'])){
 
                     $hCost=$form->get('hereOpt');
+                    $price->addValue($mCost);
+                    $price->pushValue($price->items,$mCost);
              }
 
 
