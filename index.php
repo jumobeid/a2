@@ -186,8 +186,8 @@ require('formLogic.php');
       <?php endif ?>
       <br><button class="btn btn-primary" name="placeOrder">Place Order</button>
 
-       <?php }else{
-        }echo "We are happy to serve you Monday to Friday!";?>
+    <?php }else{
+        echo "We are happy to serve you Monday to Friday!";}?>
 
 
     </form>
